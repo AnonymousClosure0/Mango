@@ -8,24 +8,6 @@
         "revision" : "d8f10d992ef32a4187b78a6df320facf75d631d8",
         "version" : "2.3.1"
       }
-    },
-    {
-      "identity" : "tun2sockskit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/daemooon/Tun2SocksKit.git",
-      "state" : {
-        "revision" : "5ba39809b40d8ba4d95dc96f9bf23cd9a84b62fd",
-        "version" : "2.2.0"
-      }
-    },
-    {
-      "identity" : "xraykit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/daemooon/XrayKit.git",
-      "state" : {
-        "revision" : "b883e3e0271105e62a1da675b1d7f7f15667b7b8",
-        "version" : "0.1.45"
-      }
     }
   ],
   "version" : 2

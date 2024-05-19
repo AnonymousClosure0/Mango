@@ -12,7 +12,6 @@
 		702D908A299B58A400B83324 /* MGNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702D9089299B58A400B83324 /* MGNotification.swift */; };
 		702D9091299FA40600B83324 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C9EDAC29502C6500B6995B /* NetworkExtension.framework */; };
 		702D9099299FA40600B83324 /* XrayTunnel.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 702D9090299FA40600B83324 /* XrayTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7069E00C29ADE79C0012C435 /* XrayKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7069E00B29ADE79C0012C435 /* XrayKit */; };
 		7069E01F29ADEAA30012C435 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702D9093299FA40600B83324 /* PacketTunnelProvider.swift */; };
 		706A6D6829C6AEAA00523A07 /* MGConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706DB6BC29B9DFE3002F22C7 /* MGConfiguration.swift */; };
 		706A6D8429CCB20F00523A07 /* MGConfigurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A6D8329CCB20F00523A07 /* MGConfigurationParser.swift */; };
@@ -26,7 +25,6 @@
 		708B380329B0937600E24312 /* MGSniffingSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B380229B0937600E24312 /* MGSniffingSettingView.swift */; };
 		708B380629B0AA4200E24312 /* MGAssetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B380529B0AA4200E24312 /* MGAssetViewModel.swift */; };
 		708B380829B0AA6200E24312 /* MGAssetSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B380729B0AA6200E24312 /* MGAssetSettingView.swift */; };
-		708B385B29B81CEB00E24312 /* Tun2SocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 708B385A29B81CEB00E24312 /* Tun2SocksKit */; };
 		708B386129B81DDB00E24312 /* MGNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702D9089299B58A400B83324 /* MGNotification.swift */; };
 		70B89C1B29C17C06003DA577 /* MGSniffingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B89C1A29C17C06003DA577 /* MGSniffingViewModel.swift */; };
 		70B89C1E29C17C29003DA577 /* MGSniffingEntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B89C1D29C17C29003DA577 /* MGSniffingEntranceView.swift */; };
@@ -74,6 +72,12 @@
 		70F82CEB29CC21B40072B334 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 70F82CEA29CC21B40072B334 /* CodeScanner */; };
 		70F82CED29CD75BB0072B334 /* MGQRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F82CEC29CD75BB0072B334 /* MGQRCodeScannerView.swift */; };
 		70F82CEE29CD7E3D0072B334 /* MGRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F82CE329CC10070072B334 /* MGRouteModel.swift */; };
+		EEB4886C2B9A0C3D00F31492 /* cxray.h in Headers */ = {isa = PBXBuildFile; fileRef = EEB4886B2B9A0C3D00F31492 /* cxray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEB4887A2B9A0D4800F31492 /* cxray.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB488792B9A0D4800F31492 /* cxray.m */; };
+		EEB4887E2B9A0DA700F31492 /* xray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB4887D2B9A0DA700F31492 /* xray.framework */; };
+		EEB4887F2B9A0E5400F31492 /* cxray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB488692B9A0C3D00F31492 /* cxray.framework */; };
+		EEB488802B9A0E5400F31492 /* cxray.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EEB488692B9A0C3D00F31492 /* cxray.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EEB9AA692BF50F7800993955 /* HevSocks5Tunnel.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB9AA652BF50EBC00993955 /* HevSocks5Tunnel.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,25 +88,23 @@
 			remoteGlobalIDString = 702D908F299FA40600B83324;
 			remoteInfo = XrayTunnel;
 		};
+		EEB488812B9A0E5400F31492 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70C9ED8D29501D5B00B6995B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEB488682B9A0C3D00F31492;
+			remoteInfo = cxray;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7069E00729ADE6D40012C435 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		708B37EE29B034EA00E24312 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				EEB488802B9A0E5400F31492 /* cxray.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +187,12 @@
 		70F82CE529CC10220072B334 /* MGRouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRouteViewModel.swift; sourceTree = "<group>"; };
 		70F82CE729CC10390072B334 /* MGRouteSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRouteSettingView.swift; sourceTree = "<group>"; };
 		70F82CEC29CD75BB0072B334 /* MGQRCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGQRCodeScannerView.swift; sourceTree = "<group>"; };
+		EEB488692B9A0C3D00F31492 /* cxray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = cxray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEB4886B2B9A0C3D00F31492 /* cxray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cxray.h; sourceTree = "<group>"; };
+		EEB488772B9A0C9F00F31492 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		EEB488792B9A0D4800F31492 /* cxray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cxray.m; sourceTree = "<group>"; };
+		EEB4887D2B9A0DA700F31492 /* xray.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = xray.framework; sourceTree = "<group>"; };
+		EEB9AA652BF50EBC00993955 /* HevSocks5Tunnel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HevSocks5Tunnel.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,9 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				70B89C3E29C1C117003DA577 /* libresolv.9.tbd in Frameworks */,
-				7069E00C29ADE79C0012C435 /* XrayKit in Frameworks */,
-				708B385B29B81CEB00E24312 /* Tun2SocksKit in Frameworks */,
 				702D9091299FA40600B83324 /* NetworkExtension.framework in Frameworks */,
+				EEB9AA692BF50F7800993955 /* HevSocks5Tunnel.xcframework in Frameworks */,
+				EEB4887F2B9A0E5400F31492 /* cxray.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,12 +215,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EEB488662B9A0C3D00F31492 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEB4887E2B9A0DA700F31492 /* xray.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		702D9092299FA40600B83324 /* XrayTunnel */ = {
 			isa = PBXGroup;
 			children = (
+				EEB9AA652BF50EBC00993955 /* HevSocks5Tunnel.xcframework */,
 				702D9093299FA40600B83324 /* PacketTunnelProvider.swift */,
 				702D9095299FA40600B83324 /* Info.plist */,
 				702D9096299FA40600B83324 /* XrayTunnel.entitlements */,
@@ -301,6 +318,7 @@
 				70C9EDCF295145DB00B6995B /* Shared */,
 				70C9ED9729501D5B00B6995B /* Mango */,
 				702D9092299FA40600B83324 /* XrayTunnel */,
+				EEB4886A2B9A0C3D00F31492 /* cxray */,
 				70C9EDAB29502C6500B6995B /* Frameworks */,
 				70C9ED9629501D5B00B6995B /* Products */,
 			);
@@ -311,6 +329,7 @@
 			children = (
 				70C9ED9529501D5B00B6995B /* Mango.app */,
 				702D9090299FA40600B83324 /* XrayTunnel.appex */,
+				EEB488692B9A0C3D00F31492 /* cxray.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -424,7 +443,29 @@
 			path = DNS;
 			sourceTree = "<group>";
 		};
+		EEB4886A2B9A0C3D00F31492 /* cxray */ = {
+			isa = PBXGroup;
+			children = (
+				EEB488772B9A0C9F00F31492 /* module.modulemap */,
+				EEB4886B2B9A0C3D00F31492 /* cxray.h */,
+				EEB488792B9A0D4800F31492 /* cxray.m */,
+				EEB4887D2B9A0DA700F31492 /* xray.framework */,
+			);
+			path = cxray;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EEB488642B9A0C3D00F31492 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEB4886C2B9A0C3D00F31492 /* cxray.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		702D908F299FA40600B83324 /* XrayTunnel */ = {
@@ -439,11 +480,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				EEB488822B9A0E5400F31492 /* PBXTargetDependency */,
 			);
 			name = XrayTunnel;
 			packageProductDependencies = (
-				7069E00B29ADE79C0012C435 /* XrayKit */,
-				708B385A29B81CEB00E24312 /* Tun2SocksKit */,
 			);
 			productName = XrayTunnel;
 			productReference = 702D9090299FA40600B83324 /* XrayTunnel.appex */;
@@ -457,7 +497,6 @@
 				70C9ED9229501D5B00B6995B /* Frameworks */,
 				70C9ED9329501D5B00B6995B /* Resources */,
 				70C9EDB629502C6500B6995B /* Embed Foundation Extensions */,
-				7069E00729ADE6D40012C435 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -471,6 +510,24 @@
 			productName = Clash;
 			productReference = 70C9ED9529501D5B00B6995B /* Mango.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EEB488682B9A0C3D00F31492 /* cxray */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEB488712B9A0C3D00F31492 /* Build configuration list for PBXNativeTarget "cxray" */;
+			buildPhases = (
+				EEB488642B9A0C3D00F31492 /* Headers */,
+				EEB488652B9A0C3D00F31492 /* Sources */,
+				EEB488662B9A0C3D00F31492 /* Frameworks */,
+				EEB488672B9A0C3D00F31492 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cxray;
+			productName = cxray;
+			productReference = EEB488692B9A0C3D00F31492 /* cxray.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -488,6 +545,9 @@
 					70C9ED9429501D5B00B6995B = {
 						CreatedOnToolsVersion = 14.1;
 					};
+					EEB488682B9A0C3D00F31492 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 				};
 			};
 			buildConfigurationList = 70C9ED9029501D5B00B6995B /* Build configuration list for PBXProject "Mango" */;
@@ -496,11 +556,10 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				"zh-Hans",
+				Base,
 			);
 			mainGroup = 70C9ED8C29501D5B00B6995B;
 			packageReferences = (
-				7069E00A29ADE79C0012C435 /* XCRemoteSwiftPackageReference "XrayKit" */,
-				708B37F829B036C500E24312 /* XCRemoteSwiftPackageReference "Tun2SocksKit" */,
 				70F82CE929CC21B40072B334 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 70C9ED9629501D5B00B6995B /* Products */;
@@ -509,6 +568,7 @@
 			targets = (
 				70C9ED9429501D5B00B6995B /* Mango */,
 				702D908F299FA40600B83324 /* XrayTunnel */,
+				EEB488682B9A0C3D00F31492 /* cxray */,
 			);
 		};
 /* End PBXProject section */
@@ -527,6 +587,13 @@
 			files = (
 				70C9EDA029501D5C00B6995B /* Preview Assets.xcassets in Resources */,
 				70C9ED9D29501D5C00B6995B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEB488672B9A0C3D00F31492 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +673,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EEB488652B9A0C3D00F31492 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEB4887A2B9A0D4800F31492 /* cxray.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -613,6 +688,11 @@
 			isa = PBXTargetDependency;
 			target = 702D908F299FA40600B83324 /* XrayTunnel */;
 			targetProxy = 702D9097299FA40600B83324 /* PBXContainerItemProxy */;
+		};
+		EEB488822B9A0E5400F31492 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEB488682B9A0C3D00F31492 /* cxray */;
+			targetProxy = EEB488812B9A0E5400F31492 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -622,10 +702,17 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = XrayTunnel/XrayTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5TR9F33WSB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/cxray",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XrayTunnel/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = XrayTunnel;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -648,10 +735,17 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = XrayTunnel/XrayTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5TR9F33WSB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/cxray",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XrayTunnel/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = XrayTunnel;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -794,16 +888,19 @@
 				CODE_SIGN_ENTITLEMENTS = Mango/Mango.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Mango/Preview Content\"";
+				DEVELOPMENT_TEAM = 5TR9F33WSB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mango/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Mango;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "扫描分享的二维码";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -827,27 +924,118 @@
 				CODE_SIGN_ENTITLEMENTS = Mango/Mango.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Mango/Preview Content\"";
+				DEVELOPMENT_TEAM = 5TR9F33WSB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mango/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Mango;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "扫描分享的二维码";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "${APP_ID}";
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_ID}.${TUNNEL_BUNDLE_SUFFIX_XRAY}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EEB488722B9A0C3D00F31492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5TR9F33WSB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/cxray",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = $SRCROOT/$TARGET_NAME/module.modulemap;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = SilverFruity.cxray;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EEB488732B9A0C3D00F31492 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5TR9F33WSB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/cxray",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = $SRCROOT/$TARGET_NAME/module.modulemap;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = SilverFruity.cxray;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -881,25 +1069,18 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EEB488712B9A0C3D00F31492 /* Build configuration list for PBXNativeTarget "cxray" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEB488722B9A0C3D00F31492 /* Debug */,
+				EEB488732B9A0C3D00F31492 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7069E00A29ADE79C0012C435 /* XCRemoteSwiftPackageReference "XrayKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daemooon/XrayKit.git";
-			requirement = {
-				kind = exactVersion;
-				version = 0.1.45;
-			};
-		};
-		708B37F829B036C500E24312 /* XCRemoteSwiftPackageReference "Tun2SocksKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daemooon/Tun2SocksKit.git";
-			requirement = {
-				kind = exactVersion;
-				version = 2.2.0;
-			};
-		};
 		70F82CE929CC21B40072B334 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner.git";
@@ -911,16 +1092,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7069E00B29ADE79C0012C435 /* XrayKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7069E00A29ADE79C0012C435 /* XCRemoteSwiftPackageReference "XrayKit" */;
-			productName = XrayKit;
-		};
-		708B385A29B81CEB00E24312 /* Tun2SocksKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 708B37F829B036C500E24312 /* XCRemoteSwiftPackageReference "Tun2SocksKit" */;
-			productName = Tun2SocksKit;
-		};
 		70F82CEA29CC21B40072B334 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 70F82CE929CC21B40072B334 /* XCRemoteSwiftPackageReference "CodeScanner" */;

@@ -1,0 +1,6 @@
+[submodule "hev-socks5-tunnel"]
+	path = hev-socks5-tunnel
+	url = https://github.com/SilverFruity/hev-socks5-tunnel.git
+[submodule "Xray-core"]
+	path = Xray-core
+	url = https://github.com/SilverFruity/Xray-core.git

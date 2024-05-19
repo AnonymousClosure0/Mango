@@ -1,3 +1,18 @@
+
+# Usage
+```shell
+git clone --recursive https://github.com/SilverFruity/Mango-1.gi
+cd Mango-1
+# go version go1.22.1 darwin/arm64
+# Xcode 15.0.1
+# iOS 16
+# cmake version 3.27.1 | GNU Make 3.81
+# before run, please install 'go' and 'make' tools
+# gen Xray-Core Framework and hev-socks5-tunnel libray
+sh build_env.sh
+# open ios project
+```
+
 系统要求：iOS16.0+
 
 开发语言：Swift、Golang、C、Assembly

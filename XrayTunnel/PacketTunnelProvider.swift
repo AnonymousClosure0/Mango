@@ -1,17 +1,17 @@
 import NetworkExtension
-import XrayKit
-import Tun2SocksKit
+import cxray
 import os
 
 extension MGConstant {
     static let cachesDirectory = URL(filePath: NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0])
 }
 
-class PacketTunnelProvider: NEPacketTunnelProvider, XrayLoggerProtocol {
+class PacketTunnelProvider: NEPacketTunnelProvider {
     
     private let logger = Logger(subsystem: "com.Arror.Mango.XrayTunnel", category: "Core")
     
     override func startTunnel(options: [String : NSObject]? = nil) async throws {
+        os_log("[CONFIG] %{public} @", "startTunnel")
         let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "254.1.1.1")
         settings.mtu = 9000
         let netowrk = MGNetworkModel.current
@@ -38,6 +38,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider, XrayLoggerProtocol {
         try await self.setTunnelNetworkSettings(settings)
         do {
             try self.startXray(inboundPort: netowrk.inboundPort)
+            #warning("For debug XrayTunnel process")
+//            Thread.sleep(forTimeInterval: 20)
             try self.startSocks5Tunnel(serverPort: netowrk.inboundPort)
         } catch {
             MGNotification.send(title: "", subtitle: "", body: error.localizedDescription)
@@ -56,20 +58,39 @@ class PacketTunnelProvider: NEPacketTunnelProvider, XrayLoggerProtocol {
         guard FileManager.default.createFile(atPath: configurationFilePath, contents: data) else {
             throw NSError.newError("Xray 配置文件写入失败")
         }
-        let log = MGLogModel.current
-        XraySetupLogger(self, log.accessLogEnabled, log.dnsLogEnabled, log.errorLogSeverity.rawValue)
-        XraySetenv("XRAY_LOCATION_CONFIG", MGConstant.cachesDirectory.path(percentEncoded: false), nil)
-        XraySetenv("XRAY_LOCATION_ASSET", MGConstant.assetDirectory.path(percentEncoded: false), nil)
-        var error: NSError? = nil
-        XrayRun(&error)
-        if let error = error {
-            os_log("[ERROR] %{public}@", error.localizedDescription as NSString)
-        }
-        try error.flatMap { throw $0 }
+        os_log("[CONFIG] InternalStartXray");
+        InternalStartXray(configurationFilePath);
     }
     
     private func startSocks5Tunnel(serverPort port: Int) throws {
-        let config = """
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            os_log("[CONFIG] Socks5Tunnel.run");
+#if DEBUG
+            let config = """
+        tunnel:
+          # Interface name
+          name: tun0
+          # Interface MTU
+          mtu: 8500
+          # Multi-queue
+          multi-queue: false
+          # IPv4 address
+          ipv4: 198.18.0.1
+        socks5:
+          port: \(port)
+          address: ::1
+          udp: 'udp'
+        misc:
+          task-stack-size: 81920
+          connect-timeout: 5000
+          read-write-timeout: 60000
+          log-file: stderr
+          log-level: error
+          limit-nofile: 65535
+        """
+#else
+            let config = """
         tunnel:
           mtu: 9000
         socks5:
@@ -84,12 +105,10 @@ class PacketTunnelProvider: NEPacketTunnelProvider, XrayLoggerProtocol {
           log-level: error
           limit-nofile: 65535
         """
-        let configurationFilePath = MGConstant.cachesDirectory.appending(component: "config.yml").path(percentEncoded: false)
-        guard FileManager.default.createFile(atPath: configurationFilePath, contents: config.data(using: .utf8)!) else {
-            throw NSError.newError("Tunnel 配置文件写入失败")
-        }
-        DispatchQueue.global(qos: .userInitiated).async {
-            NSLog("HEV_SOCKS5_TUNNEL_MAIN: \(Socks5Tunnel.run(withConfig: configurationFilePath))")
+#endif
+            os_log("[CONFIG] HEV_SOCKS5_TUNNEL_MAIN START");
+            StartTunnel(config);
+            os_log("[CONFIG] HEV_SOCKS5_TUNNEL_MAIN END");
         }
     }
     
@@ -190,6 +209,17 @@ extension MGConfiguration.Model {
             try self.buildDirectOutbound(),
             try self.buildBlockOutbound()
         ]
+        #if DEBUG
+        configuration["log"] = [
+            "loglevel": "error",
+            "dnsLog": false
+        ]
+        #else
+        configuration["log"] = [
+            "loglevel": "error",
+            "dnsLog": false
+        ]
+        #endif
         return try JSONSerialization.data(withJSONObject: configuration, options: .sortedKeys)
     }
     
