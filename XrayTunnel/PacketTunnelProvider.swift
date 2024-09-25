@@ -66,7 +66,6 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
         DispatchQueue.global(qos: .userInitiated).async {
             os_log("[CONFIG] Socks5Tunnel.run");
-#if DEBUG
             let config = """
         tunnel:
           # Interface name
@@ -89,23 +88,6 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
           log-level: error
           limit-nofile: 65535
         """
-#else
-            let config = """
-        tunnel:
-          mtu: 9000
-        socks5:
-          port: \(port)
-          address: ::1
-          udp: 'udp'
-        misc:
-          task-stack-size: 20480
-          connect-timeout: 5000
-          read-write-timeout: 60000
-          log-file: stderr
-          log-level: error
-          limit-nofile: 65535
-        """
-#endif
             os_log("[CONFIG] HEV_SOCKS5_TUNNEL_MAIN START");
             StartTunnel(config);
             os_log("[CONFIG] HEV_SOCKS5_TUNNEL_MAIN END");
