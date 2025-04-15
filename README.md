@@ -1,8 +1,8 @@
 
 # Usage
 ```shell
-git clone --recursive https://github.com/SilverFruity/Mango-1.gi
-cd Mango-1
+git clone --recursive https://github.com/AnonymousClosure0/Mango.git
+cd Mango
 # go version go1.22.1 darwin/arm64
 # Xcode 15.0.1
 # iOS 16
